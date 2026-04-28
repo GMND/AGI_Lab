@@ -1,10 +1,9 @@
-# Issue Log
+# Issue Log & Research Journal
 
-## Task: Prototype Design Specification
-**Status:** COMPLETED ✅
-**Description:** Спецификация архитектуры Nexus-1 разработана и зафиксирована в `docs/architecture_nexus_1.md`.
+## [2023-10-27] - Инициация проекта
+- **Status:** Research Phase: Foundation
+- **Task:** Формализация гипотезы LAM + World Models.
+- **Action:** Создан файл `research/hypothesis_lam_wm.md`.
+- **Next Step:** Глубокий обзор литературы по JEPA и DreamerV3.
 
-## Task: Environment Setup (Next)
-**Status:** PENDING ⏳
-**Description:** Выбор и реализация среды тестирования (например, Web-Nav-Lite или упрощенная Gym-среда) для валидации Nexus-1.
-**Assignee:** Engineer/Scientist
+---
