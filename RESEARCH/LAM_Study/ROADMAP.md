@@ -1,19 +1,17 @@
-# Дорожная карта исследования LAM
+# LAM Research Roadmap
 
-## Этап 1: Теоретический анализ (Завершено)
-- [x] Определение концепции LAM.
-- [x] Сравнение существующих подходов.
-- [x] Анализ проблемы 'галлюцинаций действий'.
+## Phase 1: Theoretical Foundation (Current)
+- [x] Define LAM Hypothesis
+- [x] Establish Benchmark Metrics
+- [x] Propose Action Tokenization Framework
+- [ ] Formalize Tokenization Mathematics (In Progress)
 
-## Этап 2: Проектирование архитектуры (В процессе)
-- [x] Разработка схемы взаимодействия LLM (Planner) $\rightarrow$ LAM (Executor) $\rightarrow$ Verifier.
-- [ ] Определение методов сбора данных для обучения действиям (Action-Dataset).
-- [ ] Разработка спецификации токенизации действий.
+## Phase 2: Prototyping (Upcoming)
+- [ ] Implement VQ-VAE for Action Quantization
+- [ ] Create a minimal environment (Python REPL/Terminal)
+- [ ] Train a small-scale 'Action-Decoder' module
 
-## Этап 3: Экспериментальная проверка
-- [ ] Создание минимального прототипа (PoC) для управления простым веб-интерфейсом.
-- [ ] Тестирование способности к обобщению на новых сайтах.
-
-## Этап 4: Публикация и верификация
-- [ ] Описание результатов в статье.
-- [ ] Рецензирование сообществом.
+## Phase 3: Scaling & Evaluation
+- [ ] Integrate with LLM backbone
+- [ ] Benchmark against standard Tool-Use models
+- [ ] Expand to Web/GUI environments
