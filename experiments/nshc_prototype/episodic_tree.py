@@ -5,3 +5,7 @@ class EpisodicNode:
         self.embedding = np.array(embedding)
         self.importance_score = importance_score
         self.children = []
+
+class EpisodicTree:
+    def __init__(self):
+        self.root = None
