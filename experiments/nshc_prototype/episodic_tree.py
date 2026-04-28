@@ -10,13 +10,23 @@ class EpisodicTree:
     def __init__(self):
         self.root = None
 
+    def _sim(self, a, b):
+        return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+
     def insert(self, content, embedding):
-        new_node = EpisodicNode(content, embedding)
+        emb = np.array(embedding)
         if self.root is None:
-            self.root = new_node
+            self.root = EpisodicNode(content, emb)
             return self.root
-        target = self.root
-        while target.children:
-            target = target.children[0]
-        target.children.append(new_node)
-        return new_node
+        best_p, max_s = self.root, self._sim(emb, self.root.embedding)
+        stack = [self.root]
+        while stack:
+            curr = stack.pop()
+            for c in curr.children:
+                s = self._sim(emb, c.embedding)
+                if s > max_s:
+                    max_s, best_p = s, c
+                stack.append(c)
+        new_n = EpisodicNode(content, emb, 1.0 - max_s)
+        best_p.children.append(new_n)
+        return new_n
