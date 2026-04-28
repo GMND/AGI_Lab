@@ -12,4 +12,4 @@
 - `/src`: Базовые библиотеки и архитектуры.
 
 --- 
-*Status: Research Phase - Formalizing LAM Hypothesis...*
+*Status: Architectural Design - Nexus-1 Specification Complete...*
