@@ -7,15 +7,15 @@
 
 ## Phase 2: Implementation (Current)
 - [x] Design Hierarchical Tokenizer Architecture.
-- [ ] Develop Gymnasium Environment Wrapper.
-- [ ] Implement Reward-Aligned Embedding Projection.
+- [x] Develop Gymnasium Environment Wrapper.
+- [x] Implement Reward-Aligned Embedding Projection.
 
-## Phase 3: Experimentation (Planned)
+## Phase 3: Experimentation (Next)
 - [ ] Baseline Run (Flat Syntax).
 - [ ] Pilot Run (Hierarchical).
 - [ ] Ablation Study.
 
 ## Key Milestones
-- **M1**: Functional Tokenizer (2024-05-22) -> **Target: 2024-05-23**
-- **M2**: First Training Loop (2024-05-29)
+- **M1**: Functional Tokenizer (2024-05-22) -> ✅ **COMPLETED**
+- **M2**: First Training Loop (Target: 2024-05-29)
 - **M3**: Publish Results (Target: NeurIPS 2024 Deadline)
