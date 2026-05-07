@@ -8,7 +8,10 @@
 - Создание среды для тестирования closed-loop взаимодействия (Action-Feedback Loop).
 
 ## Структура исследования
-- `RESEARCH/LAM_Study/`: Теоретическая база и гипотезы.
+- `RESEARCH/LAM_Study/`: Теоретическая база, гипотезы и планы реализации.
+  - `ACTION_TOKENIZATION.md`: Теоретическая модель.
+  - `IMPLEMENTATION_PLAN.md`: Архитектура системы и дизайн классов.
+  - `HYPOTHESIS.md`: Проверяемые утверждения.
 - `EXPERIMENTS/`: (In development) Логи и данные экспериментов.
 
 ## Открытые Issues
