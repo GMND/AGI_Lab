@@ -12,6 +12,9 @@
   - `ACTION_TOKENIZATION.md`: Теоретическая модель.
   - `IMPLEMENTATION_PLAN.md`: Архитектура системы и дизайн классов.
   - `HYPOTHESIS.md`: Проверяемые утверждения.
+- `src/`: Реализация ядра LAM.
+  - `hierarchical_tokenizer.py`: Иерархический токенизатор.
+  - `hierarchical_env.py`: Обертка Gymnasium.
 - `EXPERIMENTS/`: (In development) Логи и данные экспериментов.
 
 ## Открытые Issues
