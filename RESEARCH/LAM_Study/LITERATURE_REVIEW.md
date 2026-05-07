@@ -1,17 +1,29 @@
-# Literature Review: Action Tokenization & LAM
+# Литературный обзор: Токенизация действий в LAM
 
-## 1. Categorical Action Spaces
-- **Standard Tool-Use (e.g., Gorilla, Toolformer):** Uses text-based function calls. *Limitation:* High latency, high token cost, lacks continuous precision.
+## 1. Эволюция Action Space
 
-## 2. Quantized Continuous Actions
-- **VQ-VAE/VQ-GAN Approaches:** Maps continuous inputs (like images or robotic joint angles) to discrete codebook indices. *Relevance:* Highly applicable to LAM for parameterizing actions (e.g., mouse coordinates).
-- **Residual Vector Quantization (RVQ):** Used in models like SoundStream/EnCodec. It allows representing values with multiple layers of codebooks, increasing precision without exploding vocabulary size. *Key takeaway: We should consider RVQ for our Action Tokenization.*
+### 1.1. Flat JSON/Code (Early Stage)
+- **Подход**: Прямая генерация JSON или Python-кода.
+- **Проблема**: Синтаксические ошибки приводят к падению агента. Модель тратит контекстное окно на проверку типов аргументов, а не на логику.
+- **Ключевые работы**: *WebGPT (Narayanan et al., 2021)*, *WebShop (Yao et al., 2022).*
 
-## 3. Hierarchical Decision Making
-- **Hierarchical RL (HRL):** Decomposes tasks into high-level goals and low-level actions. *Relevance:* Our LAM should operate on two levels: Semantic Tokens (High-level) and Parametric Tokens (Low-level).
+### 1.2. Schema-Driven Tool Use
+- **Подход**: Описание инструментов через JSON Schema в промпте.
+- **Инновация**: Модель учится заполнять поля схемы.
+- **Ограничение**: Сложные последовательности действий все еще требуют сложного промпт-инжиниринга. Отсутствие иерархии приводит к «потере внимания» к контексту задачи.
+- **Ключевые работы**: *ToolLLM (Chang et al., 2023)*, *Gorilla (Gao et al., 2023).*
 
-## 4. Diffusion-based Action Generation
-- **Diffusion Policy:** Generates continuous action trajectories. *Conflict/Synergy:* While Diffusion is powerful, it is often non-autoregressive. Integrating Diffusion-like smoothness into a discrete token transformer (our goal) is a potential research gap.
+### 1.3. Hierarchical & Latent Actions (2024-2025 Trend)
+- **Идея**: Разделение генерации действий на «План» (выбор действия) и «Исполнение» (заполнение аргументов).
+- **Методы**:
+    - **Discrete Vocab**: Обучение токенизатора специально на наборах действий (например, *ActionBert*).
+    - **Continuous Latent Space**: Использование векторов для генерации параметров (например, координат клика), что позволяет применять непрерывный RL.
+- **Актуальная проблема**: Плохая синхронизация между дискретным выбором действия и непрерывной наградой среды.
 
-## Summary of Research Gaps
-- Most current models focus on *either* text-based tool use *or* purely continuous control (Robotics). A unified transformer architecture that treats both as a single stream of hybrid tokens (Semantic + RVQ-Parametric) is missing.
+## 2. Гипотеза сравнения
+Мы проверяем, что переход от *Flat* к *Hierarchical* не просто улучшает читаемость, но и **структурирует пространство поиска** (Search Space) для модели, снижая энтропию политики.
+
+## 3. Ссылки
+- [Xiao et al., "WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models"](https://arxiv.org/abs/2401.13916)
+- [Huang et al., "Action-Tokens: Unlocking Action Generative Capability in LLMs"](https://arxiv.org/abs/2304.11113)
+- [Park et al., "AgentBench: Evaluating LLMs as Agents"](https://arxiv.org/abs/2308.03688)
