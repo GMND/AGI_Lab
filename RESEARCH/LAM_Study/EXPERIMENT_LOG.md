@@ -1,1 +1,19 @@
-# Journal of Experiments: LAM Action Tokenization\n\n## Run #001: Baseline & Setup\n- **Date**: 2024-05-20\n- **Status**: ✅ Completed\n- **Config**: Flat-Syntax tokenizer, GPT-4o-turbo base, WebArena wrapper v1.2\n- **Metrics**: TSR: 62.4%, Step Efficiency: 8.7, ACS: 0.41\n- **Notes**: Baseline established. High action hallucination in step 4-7. Reward sparsity confirmed.\n- **Logs/Artifacts**: /EXPERIMENTS/2024-05-20_baseline_flat/\n\n## Run #002: Hierarchical Tokenization (Pilot)\n- **Date**: 2024-05-21\n- **Status**: 🔄 Running / Planned\n- **Config**: Hierarchical-Semantic tokenizer, same base, prompt with scope tokens [SCOPE:WEB], [SCOPE:DOM]\n- **Metrics**: Pending...\n- **Notes**: Testing if hierarchical structure reduces cross-domain action errors.\n- **Logs/Artifacts**: /EXPERIMENTS/2024-05-21_hier_pilot/\n\n## Run #003: Embedding-Quantized Actions\n- **Date**: 2024-05-22\n- **Status**: ⏳ Queued\n- **Config**: VQ-VAE Action Space + Reward-Conditioned Decoder\n- **Metrics**: TBD\n- **Notes**: Will test if discrete codebook aligned with reward surface improves credit assignment.
+# Journal of Experiments: LAM Action Tokenization
+
+## Run #001: Baseline & Setup
+- **Date**: 2024-05-20
+- **Status**: ✅ Completed
+- **Config**: Flat-Syntax tokenizer, GPT-4o-turbo base, WebArena wrapper v1.2
+- **Metrics**: TSR: 62.4%, Step Efficiency: 8.7, ACS: 0.41
+- **Notes**: Baseline established. High action hallucination in step 4-7. Reward sparsity confirmed.
+
+## Run #002: Hierarchical Implementation & Verification
+- **Date**: 2024-05-21 (Simulated)
+- **Status**: 🏗️ In Progress (Implementation Phase)
+- **Config**: Hierarchical-Semantic Tokenizer (v1.0)
+- **Notes**: 
+  - Created `src/hierarchical_tokenizer.py` implementing `HierarchicalToken` tree structure.
+  - Implemented `HierarchicalActionWrapper` for Gymnasium.
+  - Verification script `scripts/verify_run.py` created to test core logic.
+  - **Next Step**: Run verification script and integrate with WebArena dummy environment.
+- **Artifacts**: `src/`, `scripts/`
