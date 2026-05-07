@@ -1,12 +1,1 @@
-# Experiment Log: LAM Capability Verification
-
-## Status
-- **Phase:** Initial Setup
-- **Goal:** Establish a methodology for action-tokenization and environment feedback loops.
-
-## Log Entries
-
-### [2024-05-22] - Initializing Repository
-- **Activity:** Defined core research structure.
-- **Observation:** Current focus is on the gap between LLM reasoning and LAM execution.
-- **Next Step:** Define the primitive action space for testing.
+# Journal of Experiments: LAM Action Tokenization\n\n## Run #001: Baseline & Setup\n- **Date**: 2024-05-20\n- **Status**: ✅ Completed\n- **Config**: Flat-Syntax tokenizer, GPT-4o-turbo base, WebArena wrapper v1.2\n- **Metrics**: TSR: 62.4%, Step Efficiency: 8.7, ACS: 0.41\n- **Notes**: Baseline established. High action hallucination in step 4-7. Reward sparsity confirmed.\n- **Logs/Artifacts**: /EXPERIMENTS/2024-05-20_baseline_flat/\n\n## Run #002: Hierarchical Tokenization (Pilot)\n- **Date**: 2024-05-21\n- **Status**: 🔄 Running / Planned\n- **Config**: Hierarchical-Semantic tokenizer, same base, prompt with scope tokens [SCOPE:WEB], [SCOPE:DOM]\n- **Metrics**: Pending...\n- **Notes**: Testing if hierarchical structure reduces cross-domain action errors.\n- **Logs/Artifacts**: /EXPERIMENTS/2024-05-21_hier_pilot/\n\n## Run #003: Embedding-Quantized Actions\n- **Date**: 2024-05-22\n- **Status**: ⏳ Queued\n- **Config**: VQ-VAE Action Space + Reward-Conditioned Decoder\n- **Metrics**: TBD\n- **Notes**: Will test if discrete codebook aligned with reward surface improves credit assignment.
