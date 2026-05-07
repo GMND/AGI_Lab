@@ -8,12 +8,12 @@
 - **Notes**: Baseline established. High action hallucination in step 4-7. Reward sparsity confirmed.
 
 ## Run #002: Hierarchical Implementation & Verification
-- **Date**: 2024-05-21 (Simulated)
-- **Status**: 🏗️ In Progress (Implementation Phase)
+- **Date**: 2024-05-22
+- **Status**: 🏗️ Implementation Complete
 - **Config**: Hierarchical-Semantic Tokenizer (v1.0)
 - **Notes**: 
-  - Created `src/hierarchical_tokenizer.py` implementing `HierarchicalToken` tree structure.
-  - Implemented `HierarchicalActionWrapper` for Gymnasium.
-  - Verification script `scripts/verify_run.py` created to test core logic.
-  - **Next Step**: Run verification script and integrate with WebArena dummy environment.
+  - Implemented `HierarchicalToken` tree structure in `src/hierarchical_tokenizer.py`.
+  - Implemented `HierarchicalActionWrapper` in `src/hierarchical_env.py`.
+  - Created verification suite `scripts/verify_run.py`.
+  - **Next Step**: Run `scripts/verify_run.py` and integrate with WebArena dummy environment for Run #003.
 - **Artifacts**: `src/`, `scripts/`
